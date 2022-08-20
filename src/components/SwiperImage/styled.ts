@@ -9,13 +9,7 @@ type RootProps = {
 };
 
 const Root = styled.img<RootProps>`
-  ${(props) => `width: ${props.width}px;`}
-  ${(props) => `height: ${props.height}px;`}
-  ${(props) => `border-radius: ${props.borderRadius}px;`}
-  ${(props) => `transform: rotate(${props.rotate}turn);`}
-  &&& {
-    object-fit: contain;
-  }
+
 `;
 
 export { Root };

@@ -1,73 +1,41 @@
-import classNames from 'classnames';
-import React, { FC, useEffect, useRef, useState } from 'react';
-// import {Root} from './styled';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import React from "react";
+import Slider from "react-slick";
 
-type Props = {
-  data: string[];
-}
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const SwiperImage: FC<Props> = ({ data }) => {
-  const ref = useRef<HTMLDivElement>(null);
+import img1 from "../../assets/images/1/1_img1.png";
+import img2 from "../../assets/images/1/1_img2.png";
 
-  const [imageList, setImageList] = useState([
-    data[data?.length - 1],
-    ...data,
-    data[0],
-  ]);
 
-  const [currentImgIndex, setCurrentImgIndex] = useState(1);
-
-  const [style, setStyle] = useState({
-    transform: `translateX(-${currentImgIndex}00%)`,
-    transition: `all 0.4s ease-in-out`,
-  });
-
-  const nextSlide = () => {
-    setCurrentImgIndex(currentImgIndex + 1);
-    setStyle({
-      transform: `translateX(-${currentImgIndex + 1}00%)`,
-      transition: `all 0.4s ease-in-out`,
-    });
+export default function SimpleSlider() {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
   };
-
-  const prevSlide = () => {
-    setCurrentImgIndex(currentImgIndex - 1);
-    setStyle({
-      transform: `translateX(-${currentImgIndex - 1}00%)`,
-      transition: `all 0.4s ease-in-out`,
-    });
-  };
-
   return (
-    <div className="relative">
-      <div
-        className="overflow-hidden max-w-[480px] min-w-[280px] w-full bg-black"
-      >
-        <div ref={ref} style={style} className={`flex`}>
-          {imageList?.map((el, i) => {
-            return (
-              <img
-                key={i}
-                src={el}
-                alt=''
-                className={'w-auto h-auto object-contain'}
-              />
-            );
-          })}
-        </div>
+    <Slider {...settings}>
+      <div>
+        <img src={img1} style={{width: '100%', height: '200px'}} alt='' />
       </div>
-      <div className="absolute w-full flex justify-between top-[50%]">
-        <button className="text-white text-xl" onClick={prevSlide}>
-          <IoIosArrowBack />
-        </button>
-        <button className="text-white text-xl" onClick={nextSlide}>
-          <IoIosArrowForward />
-        </button>
+      <div>
+        <img src={img2} style={{width: '100%', height: '200px'}} alt='' />
       </div>
-      {/* ... 생략 ... */}
-    </div>
+      <div>
+        <h3>3</h3>
+      </div>
+      <div>
+        <h3>4</h3>
+      </div>
+      <div>
+        <h3>5</h3>
+      </div>
+      <div>
+        <h3>6</h3>
+      </div>
+    </Slider>
   );
-};
-
-export default SwiperImage;
+}
