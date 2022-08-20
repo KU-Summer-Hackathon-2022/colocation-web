@@ -24,9 +24,6 @@ export default function SimpleSlider() {
       <div>
         <img src={img2} style={{width: '100%', height: '250px'}} alt='' />
       </div>
-      <div>
-        <span>너무 쾌적하고 좋아요! 집 주인 분이 너무 착하시고 요리도 잘하세요. 머무는 동안 정말 행복했습니다.</span>
-      </div>
     </Slider>
   );
 }

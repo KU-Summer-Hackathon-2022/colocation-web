@@ -1,9 +1,15 @@
 import React from 'react';
-import { Root } from './styled';
+import { InfoTitleContainer, Root } from './styled';
 import SimpleSlider from 'components/SwiperImage';
 import { useParams } from 'react-router-dom';
-import { HouseDescription, HouseTitle, InfoContainer, InfoContent, InfoText, InfoTitle, ReviewContainer, ReviewContent, ReviewText, ReviewTitle } from 'components/CheckBox/styled';
+import { HouseDescription, HouseTitle, InfoContainer, InfoContent, InfoText, InfoTitle, ReviewContainer, ReviewContent, ReviewText, ReviewTitle } from './styled';
 import "./houseDetail.css";
+import { BsPerson, BsHouseDoor } from "react-icons/bs";
+import {BiBuildingHouse} from "react-icons/bi";
+import {IoPricetagsOutline} from "react-icons/io5";
+import {MdOutlineBathtub} from "react-icons/md";
+import {RiHotelBedLine} from "react-icons/ri";
+import {AiOutlineCar} from "react-icons/ai";
 
 const HouseDetail = () => {
   let { id } = useParams();
@@ -17,21 +23,18 @@ const HouseDetail = () => {
 // - 7 : 집 크기
 // - 8 : 가격
 // - 9 : 화장실 공용 여부
-// - 10 : 침대 갯수
+// - 10 : 침대 개수
 // - 11 : 카쉐어링
-  const houseInfoList = [['0', '대한민국 충청북도 청주시 흥덕구 복합주택', '36.716449902112394', '127.36472407566876', '대한민국 충청북도 청주시 흥덕구 복합주택', '공개하지 않음', '아파트', '41', '169', 'Yes', '2', 'No'],
-  ['1', '대한민국 전라남도 장성군 산정리 복합주택', '35.26588985820261', '126.82328183350438', '대한민국 전라남도 장성군 산정리 복합주택', '공개하지 않음', '아파트', '38', '174', 'Yes', '2', 'No'],
-  ['2', '대한민국 경상남도 함안군 이룡리 진달래 108동 1114호', '35.36529185789838', '128.5053057906544', '대한민국 경상남도 함안군 이룡리 진달래 108동 1114호', '공개하지 않음', '기타(ex:전통가옥)', '86', '121', 'No', '3', 'No'],
-  ['3', '대한민국 경기도 부천시 대장동 단독주택', '37.54180590602732', '126.77860817953224', '대한민국 경기도 부천시 대장동 단독주택', '여자', '단독주택', '51', '84', 'Yes', '3', 'Yes'],
-  ['4', '대한민국 경기도 광주시 무갑리 한옥', '37.4164368218093', '127.34818106533388', '대한민국 경기도 광주시 무갑리 한옥', '남자', '아파트', '63', '157', 'No', '2', 'Yes']];
+  const houseInfoList = [["0", "대한민국 경상남도 거제시 한내리 한옥", "34.939356233039405", "128.6082892153153", "대한민국 경상남도 거제시 한내리 한옥", "남자", "기타", "48", "253,472", "Yes", "4", "No"],
+  ["1", "대한민국 전라남도 신안군 읍내리 쌍용아파트 104동 1115호", "35.05038196507066", "126.1972307669225", "대한민국 전라남도 신안군 읍내리 쌍용아파트 104동 1115호", "남자", "아파트", "56", "157,234", "Yes", "1", "Yes"],
+  ["2", "대한민국 전라북도 부안군 본덕리 단독주택", "35.769311249637525", "126.73400479473776", "대한민국 전라북도 부안군 본덕리 단독주택", "여자", "아파트", "12", "126,058", "Yes", "3", "No"],
+  ["3", "대한민국 경상북도 영양군 무진리 단독주택", "36.74601182709211", "129.02007542514798", "대한민국 경상북도 영양군 무진리 단독주택", "여자", "기타", "47", "147,746", "Yes", "3", "No"],
+  ["4", "대한민국 전라남도 완도군 당락리 단독주택", "34.146014839495685", "126.8387761414148", "대한민국 전라남도 완도군 당락리 단독주택", "남자", "단독주택", "55", "69,128", "No", "4", "No"]]
   
   return (
     <Root>
       <SimpleSlider />
       <div style={{height: '30px'}}></div>
-      {/* {houseInfoList[Number(id)].map((value, index) => (
-        <div key={index}>{value}</div>
-      ))} */}
       {id && <>
         <HouseTitle>{houseInfoList[Number(id)][1]}</HouseTitle>
         <hr />
@@ -41,30 +44,39 @@ const HouseDetail = () => {
         <hr />
         <InfoText>숙소 정보</InfoText>
         <InfoContainer>
+          <InfoTitleContainer>
+          <BsPerson size="18" />
           <InfoTitle>호스트 성별</InfoTitle>
+        </InfoTitleContainer>
           <InfoContent>{houseInfoList[Number(id)][5]}</InfoContent>
         </InfoContainer>
         <InfoContainer>
+          <BiBuildingHouse />
           <InfoTitle>House Type</InfoTitle>
           <InfoContent>{houseInfoList[Number(id)][6]}</InfoContent>
         </InfoContainer>
         <InfoContainer>
+        <BsHouseDoor />
           <InfoTitle>House Size</InfoTitle>
           <InfoContent>{houseInfoList[Number(id)][7]}m<sup>2</sup></InfoContent>
         </InfoContainer>
         <InfoContainer>
+          <IoPricetagsOutline />
           <InfoTitle>Price</InfoTitle>
           <InfoContent>{houseInfoList[Number(id)][8]}원</InfoContent>
         </InfoContainer>
         <InfoContainer>
+          <MdOutlineBathtub/>
           <InfoTitle>Bathroom</InfoTitle>
           {houseInfoList[Number(id)][9] === 'Yes' ? <div>공용 화장실</div> : <div>단독 화장실</div>}
         </InfoContainer>
         <InfoContainer>
+          <RiHotelBedLine />
           <InfoTitle>Beds</InfoTitle>
           <InfoContent>{houseInfoList[Number(id)][10]}개</InfoContent>
         </InfoContainer>
         <InfoContainer>
+          <AiOutlineCar />
           <InfoTitle>Car Service</InfoTitle>
           <InfoContent>{houseInfoList[Number(id)][11]}</InfoContent>
         </InfoContainer>
