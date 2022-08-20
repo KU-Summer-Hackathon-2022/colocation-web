@@ -52,7 +52,20 @@ const InfoTitle = styled.div`
 `;
 
 const InfoContent = styled.div`
-  
+  margin-right: 10px;
+`;
+
+const HostContainer = styled.div`
+  display: flex;
+  margin-left: 10px;
+`
+
+const HostTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
 `;
 
 const ReviewText = styled.div`
@@ -78,5 +91,5 @@ const ReviewContent = styled.div`
   margin-right: 10px;
 `;
 
-export { Root, HouseTitle, HouseDescription, InfoContainer, InfoTitleContainer, InfoText, InfoTitle, InfoContent, ReviewText, ReviewContainer, ReviewTitle, ReviewContent };
+export { Root, HouseTitle, HouseDescription, InfoContainer, InfoTitleContainer, InfoText, InfoTitle, InfoContent, HostContainer, HostTextContainer, ReviewText, ReviewContainer, ReviewTitle, ReviewContent };
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import { InfoTitleContainer, Root } from './styled';
+import { HostTextContainer, InfoTitleContainer, Root } from './styled';
 import SimpleSlider from 'components/SwiperImage';
 import { useParams } from 'react-router-dom';
-import { HouseDescription, HouseTitle, InfoContainer, InfoContent, InfoText, InfoTitle, ReviewContainer, ReviewContent, ReviewText, ReviewTitle } from './styled';
+import { HouseDescription, HouseTitle, InfoContainer, InfoContent, InfoText, InfoTitle, HostContainer, ReviewContainer, ReviewContent, ReviewText, ReviewTitle } from './styled';
 import "./houseDetail.css";
 import { BsPerson, BsHouseDoor } from "react-icons/bs";
 import {BiBuildingHouse} from "react-icons/bi";
@@ -58,6 +58,44 @@ const HouseDetail = () => {
     ["28", "대한민국 경기도 가평군 운악리 단독주택", "37.89839462576741", "127.36324750367868", "대한민국 경기도 가평군 운악리 단독주택", "여자", "기타", "54", "197,898", "No", "4", "Yes", "도시 한가운데 있는 한옥의 문을 열고 들어가면 빌딩 숲은 온데간데 사라지고 완전히 다른 풍경이 펼쳐집니다. 이곳에서 마치 살아보는 것처럼 일상을 누려보면 서울은 어느새 완전히 새로운 곳이 됩니다. 에어비앤비·서울관광재단과 함께 일상을 여행처럼, 여행은 일상처럼 한옥에서 살아보는 즐거움을 느껴보세요"],
     ["29", "대한민국 전라남도 해남군 평호리 단독주택", "34.411665138622006", "126.45581519047235", "대한민국 전라남도 해남군 평호리 단독주택", "여자", "단독주택", "29", "226,363", "No", "3", "No", "도시 한가운데 있는 한옥의 문을 열고 들어가면 빌딩 숲은 온데간데 사라지고 완전히 다른 풍경이 펼쳐집니다. 이곳에서 마치 살아보는 것처럼 일상을 누려보면 서울은 어느새 완전히 새로운 곳이 됩니다. 에어비앤비·서울관광재단과 함께 일상을 여행처럼, 여행은 일상처럼 한옥에서 살아보는 즐거움을 느껴보세요"],
 ]
+
+// - 0 : 나이대
+// - 1 : 거주시간
+// - 2 : 요리여부
+// - 3 : 카쉐어링여부
+// - 4 : locality여부
+const hostInfoList = [
+  ['30', '6~20', 'Yes', 'No', 'Yes'],
+  ['90', '6~21', 'No', 'Yes', 'Yes'],
+  ['70', '10~18', 'No', 'Yes', 'No'],
+  ['80', '9~18', 'Yes', 'No', 'Yes'],
+  ['70', '9~19', 'Yes', 'Yes', 'No'],
+  ['60', '11~24', 'Yes', 'Yes', 'No'],
+  ['80', '9~22', 'Yes', 'Yes', 'Yes'],
+  ['70', '8~18', 'Yes', 'Yes', 'No'],
+  ['70', '8~18', 'Yes', 'Yes', 'Yes'],
+  ['80', '11~18', 'Yes', 'No', 'Yes'],
+  ['30', '8~21', 'No', 'No', 'Yes'],
+  ['70', '6~23', 'Yes', 'Yes', 'Yes'],
+  ['30', '11~22', 'Yes', 'Yes', 'No'],
+  ['80', '10~20', 'Yes', 'Yes', 'Yes'],
+  ['40', '6~19', 'No', 'Yes', 'Yes'],
+  ['50', '8~19', 'No', 'No', 'Yes'],
+  ['30', '11~24', 'No', 'Yes', 'No'],
+  ['70', '11~23', 'Yes', 'Yes', 'No'],
+  ['80', '10~22', 'Yes', 'No', 'No'],
+  ['50', '7~19', 'No', 'Yes', 'No'],
+  ['90', '6~22', 'Yes', 'Yes', 'No'],
+  ['40', '8~22', 'No', 'No', 'Yes'],
+  ['40', '8~24', 'No', 'No', 'Yes'],
+  ['50', '10~21', 'No', 'No', 'No'],
+  ['70', '11~20', 'No', 'No', 'No'],
+  ['90', '7~23', 'No', 'No', 'Yes'],
+  ['60', '11~23', 'No', 'Yes', 'Yes'],
+  ['60', '6~22', 'Yes', 'Yes', 'No'],
+  ['90', '7~18', 'Yes', 'No', 'No'],
+  ['90', '10~20', 'No', 'Yes', 'No']
+];
   return (
     <Root>
       <SimpleSlider id={id} />
@@ -105,6 +143,22 @@ const HouseDetail = () => {
           <InfoTitle>Car Service</InfoTitle>
           <InfoContent>{houseInfoList[Number(id)][11]}</InfoContent>
         </InfoContainer>
+        <hr />
+        <InfoText>Host 정보</InfoText>
+        <HostContainer>
+          <img src={require("../../../assets/hostImages/1.png")} alt='' style={{width :'40%', paddingLeft: '10px'}}/>
+          <HostTextContainer>
+            {houseInfoList[Number(id)][1]}에 살고 있는 로컬호스트의 나이는 <span style={{ whiteSpace: 'nowrap'}}><span style={{fontWeight: 'bold'}}>{hostInfoList[Number(id)][0]}세</span>입니다.
+            </span>
+          <br />
+          <span style={{whiteSpace: 'nowrap'}}>
+          집에는 주로 <span style={{fontWeight: 'bold'}}>{hostInfoList[Number(id)][1]}시</span>에 머물고 있어요!
+          </span>
+          <br />
+          {hostInfoList[Number(id)][3] === "Yes" ? <span>이 호스트의 집에 놀러 오시면 <span style={{fontWeight: 'bold'}}>로컬호스트가 제공하는 로컬 푸드</span>를 맛보실 수 있습니다!</span> : <></>}
+          {hostInfoList[Number(id)][3] === "Yes" ? <span>호스트에게 자녀가 있습니다! 참고하세요</span> : <></>}
+          </HostTextContainer>
+        </HostContainer>
         <hr />
         <ReviewText>리뷰</ReviewText>
         <ReviewContainer>
