@@ -6,7 +6,7 @@ import HouseList from 'pages/Houses/HouseList';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     {/* <header>
       <Link to="/">
         <button>Home</button>
