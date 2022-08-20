@@ -7,7 +7,7 @@ import Main from 'pages/Main';
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
     <header>
       <Link to="/">
         <button>Main</button>
