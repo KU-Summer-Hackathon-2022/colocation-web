@@ -153,7 +153,6 @@ const hostInfoList = [
           <span style={{whiteSpace: 'nowrap'}}>
           집에는 주로 <span style={{fontWeight: 'bold'}}>{hostInfoList[Number(id)][1]}시</span>에 머물고 있어요!
           </span>
-          
           {hostInfoList[Number(id)][3] === "Yes" ? <span>이 호스트의 집에 놀러 오시면 <span style={{fontWeight: 'bold'}}>로컬호스트가 제공하는 로컬 푸드</span>를 맛보실 수 있습니다!</span> : <></>}
           {hostInfoList[Number(id)][3] === "Yes" ? <span>호스트에게 자녀가 있습니다!</span> : <></>}
           </HostTextContainer>
@@ -165,6 +164,7 @@ const hostInfoList = [
         <ReviewContent>너무 쾌적하고 좋아요! 집 주인 분이 너무 착하시고 요리도 잘하세요. 머무는 동안 정말 행복했습니다.</ReviewContent>
         </ReviewContainer>
         <hr />
+        <div style={{height: '55px'}}></div>
       </>}
     </Root>
   );
