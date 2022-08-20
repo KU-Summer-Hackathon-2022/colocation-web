@@ -1,7 +1,5 @@
 // import { db } from '../../../firebase';
 // import { getFirestore, collection, query, where, getDocs, getDoc, doc } from "firebase/firestore";
-import React, { useEffect, useState } from 'react';
-import { Route } from 'react-router-dom';
 import { Root } from './styled';
 
 const HouseList = () => {
@@ -38,7 +36,6 @@ const HouseList = () => {
   //   // console.log(collection(db, 'houses'));
   // }, [])
   
-  const [houses, setHouses] = useState([]);
   return (
     <Root>
       <h2>House List</h2>
