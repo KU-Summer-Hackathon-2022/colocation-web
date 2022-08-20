@@ -146,17 +146,17 @@ const hostInfoList = [
         <hr />
         <InfoText>Host 정보</InfoText>
         <HostContainer>
-          <img src={require("../../../assets/hostImages/1.png")} alt='' style={{width :'40%', paddingLeft: '10px'}}/>
+          <img src={require("../../../assets/hostImages/1.png")} alt='' style={{width :'30%', paddingLeft: '5px'}}/>
           <HostTextContainer>
             {houseInfoList[Number(id)][1]}에 살고 있는 로컬호스트의 나이는 <span style={{ whiteSpace: 'nowrap'}}><span style={{fontWeight: 'bold'}}>{hostInfoList[Number(id)][0]}세</span>입니다.
             </span>
-          <br />
+          
           <span style={{whiteSpace: 'nowrap'}}>
           집에는 주로 <span style={{fontWeight: 'bold'}}>{hostInfoList[Number(id)][1]}시</span>에 머물고 있어요!
           </span>
-          <br />
+          
           {hostInfoList[Number(id)][3] === "Yes" ? <span>이 호스트의 집에 놀러 오시면 <span style={{fontWeight: 'bold'}}>로컬호스트가 제공하는 로컬 푸드</span>를 맛보실 수 있습니다!</span> : <></>}
-          {hostInfoList[Number(id)][3] === "Yes" ? <span>호스트에게 자녀가 있습니다! 참고하세요</span> : <></>}
+          {hostInfoList[Number(id)][3] === "Yes" ? <span>호스트에게 자녀가 있습니다!</span> : <></>}
           </HostTextContainer>
         </HostContainer>
         <hr />
