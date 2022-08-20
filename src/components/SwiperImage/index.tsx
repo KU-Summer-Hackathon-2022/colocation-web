@@ -24,7 +24,7 @@ function SimpleSlider(id:any) {
   };
   useEffect(() => {
     setImgId(id.id);
-  }, []);
+  }, [id]);
 
   // const newImgList:any = []
 
@@ -47,13 +47,13 @@ function SimpleSlider(id:any) {
     <>
     {imgId && <Slider {...settings}>
       <div>
-        <img src={require("../../assets/images/" + imgId + "/" + imgId + "_0" + ".png")} style={{width: '100%', height: '250px'}} alt='' />
+        <img src={require(`../../assets/images/${imgId}/${imgId}_0.png`)} style={{width: '100%', height: '250px'}} alt='' />
       </div>
       <div>
-        <img src={require("../../assets/images/" + imgId + "/" + imgId + "_1" + ".png")} style={{width: '100%', height: '250px'}} alt='' loading="lazy"/>
+        <img src={require(`../../assets/images/${imgId}/${imgId}_1.png`)} style={{width: '100%', height: '250px'}} alt='' loading="lazy"/>
       </div>
       <div>
-        <img src={require("../../assets/images/" + imgId + "/" + imgId + "_2" + ".png")}  style={{width: '100%', height: '250px'}} alt='' />
+        <img  src={require(`../../assets/images/${imgId}/${imgId}_2.png`)} style={{width: '100%', height: '250px'}} alt='' />
       </div>
       {/* <div>
         <img src={require("../../assets/images/" + imgId + "/" + imgId + "_3" + ".png")}  style={{width: '100%', height: '250px'}} alt='' />
