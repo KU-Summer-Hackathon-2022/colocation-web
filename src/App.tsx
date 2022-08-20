@@ -14,7 +14,7 @@ function App() {
       <Link to="houses">
         <button>houses</button>
       </Link>
-      <Link to="houses/house1">
+      <Link to="houses/1">
         <button>house1</button>
       </Link>
     </header>
