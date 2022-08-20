@@ -60,7 +60,7 @@ const HouseDetail = () => {
 ]
   return (
     <Root>
-      <SimpleSlider />
+      <SimpleSlider id={id} />
       <div style={{height: '30px'}}></div>
       {id && <>
         <HouseTitle>{houseInfoList[Number(id)][1]}</HouseTitle>
