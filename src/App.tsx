@@ -14,6 +14,9 @@ function App() {
       <Link to="houses">
         <button>houses</button>
       </Link>
+      <Link to="houses/house1">
+        <button>house1</button>
+      </Link>
     </header>
     <main>
     <Routes>
