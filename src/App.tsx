@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HouseDetail from 'pages/Houses/HouseDetail';
 import HouseList from 'pages/Houses/HouseList';
 
