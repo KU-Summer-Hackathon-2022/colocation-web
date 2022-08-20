@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import { Root } from './styled';
-import firebase from "../../../firebase";
-import { getDatabase, ref, onValue} from "firebase/database";
+// import firebase from "../../../firebase";
+// import { getDatabase, ref, onValue} from "firebase/database";
 import img1 from "../../../assets/images/1/1_img1.png";
 import img2 from "../../../assets/images/1/1_img2.png";
 import SwiperImage from 'components/SwiperImage';

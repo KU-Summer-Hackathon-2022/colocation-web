@@ -1,5 +1,5 @@
 // import { db } from '../../../firebase';
-import { getFirestore, collection, query, where, getDocs, getDoc, doc } from "firebase/firestore";
+// import { getFirestore, collection, query, where, getDocs, getDoc, doc } from "firebase/firestore";
 import React, { useEffect, useState } from 'react';
 import { Route } from 'react-router-dom';
 import { Root } from './styled';
