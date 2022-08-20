@@ -8,24 +8,11 @@ import Main from 'pages/Main';
 function App() {
   return (
     <BrowserRouter>
-    {/* <header>
-      <Link to="/">
-        <button>Main</button>
-      </Link>
-      <Link to="houses">
-        <button>houses</button>
-      </Link>
-      <Link to="houses/1">
-        <button>house1</button>
-      </Link>
-    </header>
-    <main> */}
     <Routes>
       <Route path="/" element={<Main />} />
       <Route path="/houses" element={<HouseList/>} />
       <Route path="/houses/:id" element={<HouseDetail />} />
     </Routes>
-    {/* </main> */}
   </BrowserRouter>
   );
 }
