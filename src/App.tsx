@@ -8,7 +8,7 @@ import Main from 'pages/Main';
 function App() {
   return (
     <BrowserRouter>
-    <header>
+    {/* <header>
       <Link to="/">
         <button>Main</button>
       </Link>
@@ -19,13 +19,13 @@ function App() {
         <button>house1</button>
       </Link>
     </header>
-    <main>
+    <main> */}
     <Routes>
       <Route path="/" element={<Main />} />
       <Route path="/houses" element={<HouseList/>} />
       <Route path="/houses/:id" element={<HouseDetail />} />
     </Routes>
-    </main>
+    {/* </main> */}
   </BrowserRouter>
   );
 }
