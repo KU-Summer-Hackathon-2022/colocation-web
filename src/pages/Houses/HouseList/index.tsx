@@ -1,45 +1,35 @@
-// import { db } from '../../../firebase';
-// import { getFirestore, collection, query, where, getDocs, getDoc, doc } from "firebase/firestore";
 import { Root } from './styled';
+import axios from "axios";
+import {useEffect, useState} from 'react';
+import {RoomList} from "../../../api/api";
 
 const HouseList = () => {
-  // async function getHouses(db: any) {
-  //   const housesCol = collection(db, 'houses');
-  //   const houseSnapshot = await getDocs(housesCol);
-  //   if (houseSnapshot) {
-      
-  //     console.log("Document data:", houseSnapshot);
-  //   } else {
-      
-  //     // doc.data() will be undefined in this case
-  //     console.log("No such document!");
-  //   }
-  //   console.log(houseSnapshot);
-  //   const houseList = houseSnapshot.docs.map(doc => doc.data());
-  //   return houseList;
-  // }
-  // const getHouses = async () => {
-  //   const querySnapshot = await getDocs(collection(db, "houses"));
-  //   querySnapshot.forEach((doc) => {
-  //     console.log(`${doc.id} => ${doc.data()}`);
-  //   });
-  // }
+  const [roomList, setRoomList] = useState<any | undefined>([]);
+  const [room, setRoom] = useState<any | undefined>();
+  const getRooms = () => {
+    axios.get("http://127.0.0.1:8000/rooms/")
+    .then((response) => {
+      console.log(response.data);
+      console.log(response.data[0].name);
+      setRoomList(response.data);
+      setRoom(response.data[0]);
+    })
+  }
+  useEffect(() => {
+    getRooms();
+  }, [])
 
-  // useEffect(() => {
-  //   getHouses(db);
-  //   const housesCol = collection(db, 'houses');
-  //   // console.log(getDoc(housesCol));
-  //   const docRef = doc(db, 'houses/1');
-  //   console.log(doc(db, 'houses/1'));
-  //   const docSnap = getDoc(docRef);
-  //   console.log(docSnap);
-  //   // console.log(collection(db, 'houses'));
-  // }, [])
-  
+  useEffect(() => {
+    room && console.log(room.name);
+  }, [room]);
+
   return (
     <Root>
       <h2>House List</h2>
-
+      <div>{room && room.name}</div>
+      {roomList && roomList.map((value:any, index:any) => 
+        <div key={index}>{value.name}</div>
+      )}
     </Root>
   );
 };
