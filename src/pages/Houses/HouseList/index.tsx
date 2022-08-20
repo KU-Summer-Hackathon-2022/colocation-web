@@ -1,7 +1,6 @@
 import { Root } from './styled';
 import axios from "axios";
 import {useEffect, useState} from 'react';
-import {RoomList} from "../../../api/api";
 
 const HouseList = () => {
   const [roomList, setRoomList] = useState<any | undefined>([]);
