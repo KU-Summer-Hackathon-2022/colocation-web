@@ -63,7 +63,7 @@ const HostContainer = styled.div`
 const HostTextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 6px;
   margin-right: 20px;
 `;
 

@@ -150,7 +150,6 @@ const hostInfoList = [
           <HostTextContainer>
             {houseInfoList[Number(id)][1]}에 살고 있는 로컬호스트의 나이는 <span style={{ whiteSpace: 'nowrap'}}><span style={{fontWeight: 'bold'}}>{hostInfoList[Number(id)][0]}세</span>입니다.
             </span>
-          
           <span style={{whiteSpace: 'nowrap'}}>
           집에는 주로 <span style={{fontWeight: 'bold'}}>{hostInfoList[Number(id)][1]}시</span>에 머물고 있어요!
           </span>
