@@ -1,4 +1,4 @@
-# Share Roof Web
+# Share Roof Web
 React + typescript로 숙소 상세페이지를 구현하였습니다.
 네이티브 앱에서 배포한 웹페이지를 웹뷰로 띄웠습니다.
 
