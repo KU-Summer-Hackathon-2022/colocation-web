@@ -6,7 +6,7 @@ const HouseList = () => {
   const [roomList, setRoomList] = useState<any | undefined>([]);
   const [room, setRoom] = useState<any | undefined>();
   const getRooms = () => {
-    axios.get("http://127.0.0.1:8000/rooms/")
+    axios.get("http://ec2-15-164-97-131.ap-northeast-2.compute.amazonaws.com:8080/rooms/")
     .then((response) => {
       console.log(response.data);
       console.log(response.data[0].name);
