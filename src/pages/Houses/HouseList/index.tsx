@@ -9,9 +9,13 @@ const HouseList = () => {
     axios.get("http://ec2-15-164-97-131.ap-northeast-2.compute.amazonaws.com:8080/rooms/")
     .then((response) => {
       console.log(response.data);
-      console.log(response.data[0].name);
+      console.log(response);
+      // console.log(response.data[0].name);
       setRoomList(response.data);
       setRoom(response.data[0]);
+    })
+    .catch((error) => {
+      console.log(error)
     })
   }
   useEffect(() => {
